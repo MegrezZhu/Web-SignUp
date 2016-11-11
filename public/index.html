@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>注册</title>
+    <link rel="stylesheet" href="stylesheets/index.css"/>
+    <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.js"></script>-->
+    <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.js"></script>-->
+    <script type="text/javascript" src="./javascripts/lib/jquery.js"></script>
+    <script type="text/javascript" src="./javascripts/lib/lodash.js"></script>
+    <script type="text/javascript" src="javascripts/inputCheck.js"></script>
+    <script type="text/javascript" src="./javascripts/index.js"></script>
+</head>
+<body>
+    <div id="container">
+        <h1>注册</h1>
+        <form method="post">
+            <div id="group-inputs">
+                <div class="input-container"><input type="text" name="name" placeholder="姓名" autoComplete="off"/>
+                    <div class="error-info">error</div>
+                </div>
+                <div class="input-container"><input type="text" name="id" placeholder="学号" autoComplete="off"/>
+                    <div class="error-info">error</div>
+                </div>
+                <div class="input-container"><input type="text" name="phone" placeholder="电话" autoComplete="off"/>
+                    <div class="error-info">error</div>
+                </div>
+                <div class="input-container"><input type="text" name="mail" placeholder="邮箱" autoComplete="off"/>
+                    <div class="error-info">error</div>
+                </div>
+            </div>
+            <p><input type="submit" disabled="disabled" value="注册"/></p>
+        </form>
+    </div>
+</body>
+</html>
