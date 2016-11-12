@@ -8,10 +8,12 @@ function readFromStream(stream, callback) {
     try {
         stream.setEncoding('utf-8');
         let chunk = [];
-        stream.on('end', function () {
-            callback(null, chunk.join(''));
-        });
-        stream.on('data', data => chunk.push(data));
+        stream
+            .on('end', function () {
+                callback(null, chunk.join(''));
+            })
+            .on('data', data => chunk.push(data))
+            .on('error', err => callback(err, null));
     } catch (e) {
         callback(e, null);
     }
