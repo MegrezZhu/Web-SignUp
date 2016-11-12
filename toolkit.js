@@ -64,9 +64,17 @@ function renderFile(filePath, obj, callback) {
     });
 }
 
-module.exports.readFromStream = readFromStream;
-module.exports.ensureFileExist = ensureFileExist;
-module.exports.sendFile = sendFile;
-module.exports.redirectTo = redirectTo;
-module.exports.renderFile = renderFile;
+// module.exports.readFromStream = readFromStream;
+// module.exports.ensureFileExist = ensureFileExist;
+// module.exports.sendFile = sendFile;
+// module.exports.redirectTo = redirectTo;
+// module.exports.renderFile = renderFile;
+
+module.exports = {
+    readFromStream,
+    ensureFileExist,
+    sendFile,
+    redirectTo,
+    renderFile
+}
 
