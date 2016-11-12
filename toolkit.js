@@ -2,7 +2,8 @@
  * Created by i4908 on 2016/11/9.
  */
 
-let fs = require('fs');
+let fs = require('fs'),
+    path = require('path');
 
 function readFromStream(stream, callback) {
     try {
@@ -21,7 +22,9 @@ function readFromStream(stream, callback) {
 
 function ensureFileExist(filePath) {
     if (!fs.existsSync(filePath)) {
+        fs.mkdirSync(path.dirname(filePath));
         fs.writeFileSync(filePath, '{}', {encoding: 'utf-8'});
+        console.log(`"${filePath}" not exist, now ok.`);
     }
 }
 
