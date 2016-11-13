@@ -91,6 +91,10 @@ form input[type="text"]:focus {
     background-color: rgb(85, 171, 237);
 }
 
+.button:active {
+    background-color: rgb(55, 151, 210);
+}
+
 .button[disabled="disabled"], .buttonp[disabled="disabled"]:hover {
     background-color: gray;
 }
