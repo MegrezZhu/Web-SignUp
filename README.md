@@ -10,10 +10,12 @@ created by ZhuChu.
     npm install
     ```
 2. To launch the Node.js server:
+
     ```npm
     npm start
     ```
     or
+    
     ```npm
     node server
     ```
