@@ -49,6 +49,7 @@ $(function () {
         let $inputs = $('input[type="text"]');
         return function() {
             $inputs.each(reset);
+            $('input[type="submit"]').attr("disabled", "disabled");
         };
     })());
 });
