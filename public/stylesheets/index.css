@@ -73,30 +73,30 @@ form input[type="text"]:focus {
     box-shadow: 0 0 1px 2px rgb(15, 136, 235);
 }
 
-form input[type="text"]::-webkit-input-placeholder {
-    color: #CCCCCC;
-}
-
-form input[type="submit"] {
+.button {
     margin-top: 50px;
     width: 100%;
     background-color: rgb(15, 136, 235);
     color: white;
     border-radius: 5px;
     height: 50px;
-    font-size: 15pt;   
-    border: none; 
+    font-size: 15pt;
+    border: none;
     user-select: none;
     -webkit-user-select: none;
     transition: background-color 0.3s;
 }
 
-form input[type="submit"]:hover {
+.button:hover {
     background-color: rgb(85, 171, 237);
 }
 
-form input[disabled="disabled"], form input[disabled="disabled"]:hover {
+.button[disabled="disabled"], .buttonp[disabled="disabled"]:hover {
     background-color: gray;
+}
+
+form input[type="text"]::-webkit-input-placeholder {
+    color: #CCCCCC;
 }
 
 form input[status="ok"] {

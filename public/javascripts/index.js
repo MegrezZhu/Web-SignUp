@@ -32,14 +32,23 @@ function changeStatus(id, status) {
     }
 }
 
+function reset() {
+    let $ele = $(this);
+    $ele.attr("status", "normal");
+    clearErr($ele.attr("name"));
+}
+
 $(function () {
     var input = $("input[type='text']");
     input.attr("status", "normal");
-    input.focus(function () {
-        $(this).attr("status", "normal");
-        clearErr($(this).attr("name"));
-    });
+    input.focus(reset);
     input.blur(function () {
         checkMethod[$(this).attr("name")]($(this).val(), errHandler);
     });
+    $('input[type="reset"]').click((function(){
+        let $inputs = $('input[type="text"]');
+        return function() {
+            $inputs.each(reset);
+        };
+    })());
 });
