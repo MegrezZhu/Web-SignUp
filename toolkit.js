@@ -56,7 +56,7 @@ function sendFile(res, filePath) {
 }
 
 function redirectTo(res, path) {
-    res.writeHead(301, {'Location': path});
+    res.writeHead(302, {'Location': path});
     res.end();
 }
 
