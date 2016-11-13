@@ -6,8 +6,8 @@ let url = require('url'),
     queryString = require('querystring'),
     _ = require('lodash'),
     path = require('path'),
-    User = require('../user').User,
-    users = require('../user').users,
+    User = require('../model/user').User,
+    users = require('../model/user').users,
     toolkit = require('../toolkit'),
     checkMethod = require('../inputCheck');
 

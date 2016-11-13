@@ -1,4 +1,4 @@
-﻿let users = require('./user').users,
+﻿let users = require('./model/user').users,
     _ = require('lodash');
 
 let checkMethod = {

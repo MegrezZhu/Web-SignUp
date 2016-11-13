@@ -1,5 +1,5 @@
 ﻿let path = require('path'),
-    toolkit = require('./toolkit'),
+    toolkit = require('./../toolkit'),
     fs = require('fs');
 
 function User(name, id, phone, mail) {
@@ -21,7 +21,7 @@ function saveUserPerTime(filePath, time) {
 let users;
 
 (function () {
-    let filePath = path.join(__dirname, 'database', 'user.json');
+    let filePath = path.join(__dirname, '..', 'database', 'user.json');
     toolkit.ensureFileExist(filePath);
     let data = fs.readFileSync(filePath, {encoding: 'utf-8'});
     try {
