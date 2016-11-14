@@ -25,7 +25,7 @@ function sendUserPage(res, username) {
 function getReqHandler(req, res) {
     let _url = url.parse(req.url);
     if (_url.pathname === '/') _url.pathname += 'index.html';
-    if (!_url.query && _url.pathname.match(/.+\..+/)) { //file requests
+    if (!_url.query && !!path.basename(_url.pathname)) { //file requests
         try {
             let filePath = path.join(__dirname, '..\\public', _url.pathname);
             toolkit.sendFile(res, filePath);
