@@ -1,5 +1,5 @@
 ﻿let path = require('path'),
-    toolkit = require('./../toolkit'),
+    kit = require('./../kit'),
     fs = require('fs');
 
 function User(name, id, phone, mail) {
@@ -22,7 +22,7 @@ let users;
 
 (function () {
     let filePath = path.join(__dirname, '..', 'database', 'user.json');
-    toolkit.ensureFileExist(filePath);
+    kit.ensureFileExist(filePath);
     let data = fs.readFileSync(filePath, {encoding: 'utf-8'});
     try {
         users = JSON.parse(data);

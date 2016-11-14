@@ -7,11 +7,11 @@ let url = require('url'),
     path = require('path'),
     User = require('../model/user').User,
     users = require('../model/user').users,
-    toolkit = require('../toolkit'),
+    kit = require('../kit'),
     checkMethod = require('../inputCheck');
 
 function renderDetailPage(user, callback) {
-    toolkit.renderFile(path.join(__dirname, '..\\views\\detail.template'), user, callback);
+    kit.renderFile(path.join(__dirname, '..\\views\\detail.template'), user, callback);
 }
 
 function sendUserPage(res, username) {
@@ -27,7 +27,7 @@ function getReqHandler(req, res) {
     if (!_url.query && !!path.basename(_url.pathname)) { //file requests
         try {
             let filePath = path.join(__dirname, '..\\public', _url.pathname);
-            toolkit.sendFile(res, filePath);
+            kit.sendFile(res, filePath);
         } catch (e) {
             res.writeHead(404, {'Content-Type': 'text/plain'});
             res.end('File not found.');
@@ -36,13 +36,13 @@ function getReqHandler(req, res) {
     } else {
         let query = queryString.parse(_url.query);
         if (query.username && users[query.username]) sendUserPage(res, query.username);
-        else toolkit.redirectTo(res, '/');
+        else kit.redirectTo(res, '/');
     }
 }
 
 function postReqHandler(req, res) {
     let _url = url.parse(req.url);
-    toolkit.readFromStream(req, function (err, data) {
+    kit.readFromStream(req, function (err, data) {
         if (_url.pathname.match(/^\/check\//)) {
             let argName = _url.pathname.match(/^\/check\/(.+)/)[1],
                 arg = data;
@@ -54,13 +54,13 @@ function postReqHandler(req, res) {
                 let result = checkMethod.checkAll(query);
                 if (result) {
                     users[query.name] = new User(query.name, query.id, query.phone, query.mail);
-                    toolkit.redirectTo(res, `/?username=${query.name}`);
+                    kit.redirectTo(res, `/?username=${query.name}`);
                 } else {
                     res.write(200);
                     res.end('Hey! What are you doing?!');
                 }
             } else {
-                toolkit.redirectTo(res, '/');
+                kit.redirectTo(res, '/');
             }
         }
     });
