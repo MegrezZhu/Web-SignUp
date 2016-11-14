@@ -1,10 +1,11 @@
 # Web-SignUp
-##Just an assignment.
+##Description
+Just an assignment.
 
-created by ZhuChu.
+Created by ZhuChu.
 
 ##Instruction
-1. Install dependencies.
+1. Install dependencies before launching.
     
     ```npm
     npm install
