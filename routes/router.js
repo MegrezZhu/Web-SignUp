@@ -4,7 +4,6 @@
 
 let url = require('url'),
     queryString = require('querystring'),
-    _ = require('lodash'),
     path = require('path'),
     User = require('../model/user').User,
     users = require('../model/user').users,
