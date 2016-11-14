@@ -81,5 +81,5 @@ module.exports = {
     sendFile,
     redirectTo,
     renderFile
-}
+};
 

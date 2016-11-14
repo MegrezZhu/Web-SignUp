@@ -14,7 +14,7 @@ function errHandler(id, flag, msg) {
     else {
         changeStatus(id, "wrong");
         if (msg) {
-            var info = $('input[name="' + id + '"] + .error-info');
+            let info = $('input[name="' + id + '"] + .error-info');
             info.text(msg);
             info.css('opacity', '1')
                 .css('transform', 'scaleX(1)');
@@ -23,7 +23,7 @@ function errHandler(id, flag, msg) {
 }
 
 function changeStatus(id, status) {
-    var _this = $("input[name='" + id + "']");
+    let _this = $("input[name='" + id + "']");
     _this.attr("status", status);
     if ($('input[status="ok"]').length === 4) {
         $('input[type="submit"]').removeAttr("disabled");
@@ -39,7 +39,7 @@ function reset() {
 }
 
 $(function () {
-    var input = $("input[type='text']");
+    let input = $("input[type='text']");
     input.attr("status", "normal");
     input.focus(reset);
     input.blur(function () {

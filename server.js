@@ -1,7 +1,7 @@
-﻿var http = require('http');
-var router = require('./routes/router');
+﻿let http = require('http');
+let router = require('./routes/router');
 
-var port = 8000;
+let port = 8000;
 
 http.createServer(router)
     .listen(port, function() {

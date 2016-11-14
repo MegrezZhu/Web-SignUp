@@ -32,7 +32,6 @@ function getReqHandler(req, res) {
             res.writeHead(404, {'Content-Type': 'text/plain'});
             res.end('File not found.');
         }
-        return;
     } else {
         let query = queryString.parse(_url.query);
         if (query.username && users[query.username]) sendUserPage(res, query.username);
@@ -44,9 +43,8 @@ function postReqHandler(req, res) {
     let _url = url.parse(req.url);
     kit.readFromStream(req, function (err, data) {
         if (_url.pathname.match(/^\/check\//)) {
-            let argName = _url.pathname.match(/^\/check\/(.+)/)[1],
-                arg = data;
-            if (!checkMethod[argName](arg)) res.end('wrong');
+            let argName = _url.pathname.match(/^\/check\/(.+)/)[1];
+            if (!checkMethod[argName](data)) res.end('wrong');
             else res.end('ok');
         } else {
             let query = queryString.parse(data);
