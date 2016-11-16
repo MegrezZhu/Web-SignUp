@@ -1,5 +1,5 @@
 ﻿let path = require('path'),
-    kit = require('./../kit'),
+    kit = require('./../lib/kit'),
     fs = require('fs');
 
 function User(name, id, phone, mail) {
